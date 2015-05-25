@@ -1,0 +1,11 @@
+{
+  "name": "yougottalovefrontend-sergeylukin",
+  "homepage": "https://github.com/sergeylukin/yougottalovefrontend",
+  "authors": [
+    "Sergey Lukin <contact@sergeylukin.com>"
+  ],
+  "private": true,
+  "dependencies": {
+    "skrollr": "~0.6.29"
+  }
+}
