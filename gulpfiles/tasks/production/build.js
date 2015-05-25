@@ -5,7 +5,7 @@ var runSequence = require('run-sequence');
  * Run all tasks needed for a build in defined order
  */
 gulp.task('build:production', function(callback) {
-  runSequence('delete', 'html:production',
+  runSequence('delete', 'html:production', 'modernizr',
   [
     'sass',
     'scripts',

@@ -6,10 +6,18 @@
   "author": "Sergey Lukin <contact@sergeylukin.com>",
   "homepage": "https://github.com/sergeylukin/yougottalovefrontend",
   "browser": {
-    "modernizr": "./app/assets/javascripts/modernizr-custom.js"
+    "modernizr": "./app/assets/javascripts/modernizr-custom.js",
+    "skrollr": "./app/_bower_components/skrollr/src/skrollr.js",
+    "pace": "./app/_bower_components/pace/pace.js",
+    "snap": "./app/_bower_components/Snap.svg/dist/snap.svg.js",
+    "picturefill": "./app/_bower_components/picturefill/dist/picturefill.js"
   },
   "browserify-shim": {
-    "modernizr": "Modernizr"
+    "modernizr": "Modernizr",
+    "skrollr": "skrollr",
+    "pace": "Pace",
+    "snap": "Snap",
+    "picturefill": "picturefill"
   },
   "browserify": {
     "transform": [

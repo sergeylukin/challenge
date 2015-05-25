@@ -6,6 +6,9 @@
   ],
   "private": true,
   "dependencies": {
-    "skrollr": "~0.6.29"
+    "skrollr": "~0.6.29",
+    "pace": "~1.0.2",
+    "Snap.svg": "~0.4.1",
+    "picturefill": "~2.3.1"
   }
 }
