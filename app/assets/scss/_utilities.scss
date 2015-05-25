@@ -1,0 +1,39 @@
+.u-inlineBlock {
+  display: inline-block;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.is-levitating{
+  -webkit-animation: levitate 2s infinite linear;
+    -moz-animation: levitate 2s infinite linear;
+}
+
+@-webkit-keyframes levitate{
+  0% {
+		-webkit-transform: rotate(0deg)
+		           translate(-3px)
+		           rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg)
+		           translate(-3px) 
+		           rotate(-360deg);
+	}
+
+}
+
+@-moz-keyframes levitate{
+  0% {
+		-moz-transform: rotate(0deg)
+		           translate(-3px)
+		           rotate(0deg);
+	}
+	100% {
+		-moz-transform: rotate(360deg)
+		           translate(-3px) 
+		           rotate(-360deg);
+	}
+}
