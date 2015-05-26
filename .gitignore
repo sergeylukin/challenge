@@ -2,3 +2,4 @@ node_modules
 app/_bower_components
 app/assets/javascripts/modernizr-custom.js
 build
+.publish/
