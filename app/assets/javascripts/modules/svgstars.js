@@ -169,8 +169,8 @@ module.exports = {
     backgroundGradient.attr({
       opacity: 0,
       fill: gradient,
-      'data-1300': 'opacity: 0',
-      'data-1400': 'opacity: .6'
+      'data-1100': 'opacity: 0',
+      'data-1300': 'opacity: .6'
     });
   },
 
