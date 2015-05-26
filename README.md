@@ -30,8 +30,13 @@ browser.
 
 - My wife for perfoming QA tests every time I was making modifications.
 
+- [Dmitry Pistrov](http://depositphotos.com/portfolio-1001736.html) for amazing
+  [photo of Tel Aviv](http://depositphotos.com/11549418/stock-photo-tel-aviv-skyline-at.html).
+  
+  I've purchased standard license to use it in my project (purchase #40524481)
+
 - [codepen.io](http://codepen.io) for being an amazing brainstorming platform
 
-- `Gulp` for being awesome automated tasks manager
+- `Gulp` for being an awesome automated tasks manager
 
 - `Browsersync` for being a great cross-devices live reload solution
