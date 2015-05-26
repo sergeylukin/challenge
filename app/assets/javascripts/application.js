@@ -28,7 +28,7 @@ if (Modernizr.svg && viewport.width() > 480 && !device.isMobileOrTablet()) {
 } else {
 
   var logo = document.getElementById('Logo');
-  logo.dataset['400'] = "opacity: 1";
+  logo.dataset['400'] = "opacity: 1; display: inline;";
   logo.removeAttribute('data-1100');
   logo.removeAttribute('data-1200');
 
