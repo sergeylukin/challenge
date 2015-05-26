@@ -17,7 +17,7 @@ var debounce = require('./modules/debounce');
 scrolling.disable();
 
 
-if (Modernizr.svg && viewport.width() > 480 && !device.isMobile()) {
+if (Modernizr.svg && viewport.width() > 480 && !device.isMobileOrTablet()) {
 
   svgstars.initPaper();
   svgstars.initFrame();
