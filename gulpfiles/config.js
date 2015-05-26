@@ -46,11 +46,17 @@ module.exports = {
 
   html: {
     development: {
-      src:  src + '/**/*.html',
+      src:  [
+        src + '/**/*.html',
+        '!' + src + '/_bower_components/**'
+      ],
       dest: development
     },
     production: {
-      src:  src + '/**/*.html',
+      src:  [
+        src + '/**/*.html',
+        '!' + src + '/_bower_components/**'
+      ],
       dest: production
     }
   },

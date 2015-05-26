@@ -27,7 +27,7 @@ gulp.task('scripts', function(callback) {
       extensions: config.extensions,
       // Enable source maps!
       debug: config.debug
-    }).ignore(bundleConfig.ignore);
+    });
 
     if (bundleConfig.ignore instanceof Array && bundleConfig.ignore.length > 0) {
       bundleConfig.ignore.forEach(function(el) {
