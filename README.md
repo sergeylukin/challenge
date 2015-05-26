@@ -7,6 +7,8 @@ Gulp powered project crafted with love on Macbook Pro in Israel in 2015 speciall
 Aimed to take 2nd place. Or 1st in the worst case scenario. Just kidding, of
 course 1st place is the aim.
 
+[LIVE DEMO](http://sergeylukin.com/yougottalovefrontend)
+
 
 ## Commands
 
