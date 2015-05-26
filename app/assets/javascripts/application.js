@@ -1,4 +1,4 @@
-/* global Pace, skrollr */
+/* global Modernizr, Pace, skrollr */
 
 require('modernizr');
 require('skrollr');
@@ -8,16 +8,30 @@ require('picturefill');
 var scrolling = require('./modules/scrolling');
 var city = require('./modules/city');
 var svgstars = require('./modules/svgstars');
+var viewport = require('./modules/viewport');
+var device = require('./modules/device');
+var debounce = require('./modules/debounce');
 
 // Disable scrolling as soon as possible
 // As soon as all elements will be loaded scrolling will be enabled
 scrolling.disable();
 
 
-svgstars.initPaper();
-svgstars.initFrame();
-svgstars.initStars();
-svgstars.initBackgroundGradient();
+if (Modernizr.svg && viewport.width() > 480 && !device.isMobile()) {
+
+  svgstars.initPaper();
+  svgstars.initFrame();
+  svgstars.initStars();
+  svgstars.initBackgroundGradient();
+
+} else {
+
+  var logo = document.getElementById('Logo');
+  logo.dataset['400'] = "opacity: 1";
+  logo.removeAttribute('data-1100');
+  logo.removeAttribute('data-1200');
+
+}
 
 
 Pace.on('start', function(){
@@ -41,8 +55,7 @@ Pace.on('done', function(){
 
 var SKROLL = skrollr.init();
 
-
-window.addEventListener('resize', function(evt) {
+var resizeHandler = debounce(function() {
   svgstars.updatePaper();
   svgstars.updateFrame();
   svgstars.positionFrameInCenter();
@@ -55,4 +68,6 @@ window.addEventListener('resize', function(evt) {
     SKROLL.setScrollTop(299);
   }
   city.update();
-});
+}, 250);
+
+window.addEventListener('resize', resizeHandler);

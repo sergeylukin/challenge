@@ -174,7 +174,6 @@ module.exports = {
     });
   },
 
-
   updateBackgroundGradient: function() {
     backgroundGradient.attr({
       width: viewport.width(),
