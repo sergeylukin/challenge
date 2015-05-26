@@ -94,6 +94,12 @@ module.exports = {
       srcAssets + '/javascripts/**/*.js',
       srcAssets + '/scss/**/*.scss'
     ],
+    customizr: {
+      options: [
+        "setClasses",
+        "addTest"
+      ]
+    },
     dest: srcAssets + '/javascripts/',
     filename: 'modernizr-custom.js'
   },
@@ -105,13 +111,19 @@ module.exports = {
 
   watch: {
     sass:    srcAssets + '/scss/**/*.{sass,scss}',
-    scripts: srcAssets + '/javascripts/**/*.js',
+    scripts: [
+      srcAssets + '/javascripts/**/*.js',
+      '!' + srcAssets + '/javascripts/modernizr-custom.js'
+    ],
     images: srcAssets + '/images/**/*.{jpg,png}',
     html: src + '/**/*.html'
   },
 
   jshint: {
-    src: srcAssets + '/javascripts/*.js'
+    src: [
+      srcAssets + '/javascripts/*.js',
+      '!' + srcAssets + '/javascripts/modernizr-custom.js'
+    ]
   },
 
   optimize: {

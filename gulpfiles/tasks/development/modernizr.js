@@ -7,7 +7,7 @@ var config       = require('../../config').modernizr;
  */
 gulp.task('modernizr', function() {
   return gulp.src(config.src)
-    .pipe(modernizr(config.filename))
+    .pipe(modernizr(config.filename, config.customizr))
     .pipe(gulp.dest(config.dest))
 });
 
