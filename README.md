@@ -32,7 +32,7 @@ browser.
 
 ## Credits
 
-- My wife for perfoming QA tests every time I was making modifications.
+- My wife for heavily helping me with usability testing
 
 - [Dmitry Pistrov](http://depositphotos.com/portfolio-1001736.html) for amazing
   [photo of Tel Aviv](http://depositphotos.com/11549418/stock-photo-tel-aviv-skyline-at.html).
