@@ -6,11 +6,7 @@
 </head>
 <body>
 
-  <img src="assets/images/logo.png"
-       id="Logo"
-       data-0="opacity: 0" data-1000="opacity: 0" data-1100="opacity: 1" />
-
-  <div class="AuthorMessage is-hidden" data-0="opacity: 1" data-100="opacity: 0">
+  <div class="AuthorMessage" data-0="opacity: 1" data-70="opacity: 0.3" data-100="opacity: 0">
     <a href="https://github.com/sergeylukin" target="_blank">
       <figure class="AuthorMessage-figure">
         <img src="./assets/images/sergeylukin.png" alt="Sergey Lukin" width="150px"
@@ -22,8 +18,21 @@
     the <em><a href="https://github.com/YouGottaLoveFrontEnd/challenge" target="_blank">You Gotta Love Front End</a></em> conference challenge</p>
   </div>
 
+  <img src="assets/images/logo.png"
+       id="Logo"
+       data-0="opacity: 0" data-1100="opacity: 0" data-1200="opacity: 1" />
+
   <div id="YGLF-intro" class="is-hidden">
-    <div id="City" data-800="z-index: 1" data-801="z-index: 0">
+
+    <p id="ScrollingHelpfulMessage" data-0="opacity: 1" data-100="opacity: 0;">
+      <span class="u-inlineBlock is-levitating">Keep scrolling down</span>
+    </p>
+
+    <div class="WelcomeMessage" data-100="opacity: 1" data-200="opacity: 1" data-300="opacity: 0;">
+      <p class="WelcomeMessage-cell">Welcome to Tel Aviv</p>
+    </div>
+
+    <div id="City" data-900="z-index: 1" data-901="z-index: 0">
       <img id="Telaviv"
            src="./assets/images/telaviv-small.png"
            srcset="
@@ -33,16 +42,7 @@
            alt="Tel Aviv" />
     </div>
 
-    <div class="WelcomeMessage" data-200="opacity: 1" data-300="opacity: 0;">
-      <p class="WelcomeMessage-cell">Welcome to Tel Aviv</p>
-    </div>
-
-    <p id="ScrollingHelpfulMessage" data-0="opacity: 1" data-100="opacity: 0;">
-      <span class="u-inlineBlock is-levitating">Keep scrolling down</span>
-    </p>
   </div>
-
-  <div class="LoadingContentCover is-hidden"></div>
 
   <script src="assets/js/application.js"></script>
 </body>

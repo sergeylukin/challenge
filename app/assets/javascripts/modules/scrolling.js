@@ -22,22 +22,21 @@ function wheel(e) {
   preventDefault(e);
 }
 
-function disable_scroll() {
-  if (window.addEventListener) {
-      window.addEventListener('DOMMouseScroll', wheel, false);
-  }
-  window.onmousewheel = document.onmousewheel = wheel;
-  document.onkeydown = keydown;
-}
 
-function enable_scroll() {
+
+
+module.exports = {
+  disable: function() {
+    if (window.addEventListener) {
+        window.addEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = wheel;
+    document.onkeydown = keydown;
+  },
+  enable: function() {
     if (window.removeEventListener) {
         window.removeEventListener('DOMMouseScroll', wheel, false);
     }
-    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
-}
-
-module.exports = {
-  disable: disable_scroll,
-  enable: enable_scroll
+    window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+  }
 };

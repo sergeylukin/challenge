@@ -93,8 +93,8 @@ module.exports = {
     frameStroke.attr({
       width: logoWidth,
       height: logoHeight,
-      'data-300':   '@transform[cubic]: translate('+(viewport.width() / 2)+' ' + (viewport.height() / 2) + ') scale(0) rotate(0 ' + (viewport.width() / 2) + ' ' + (viewport.height() / 2) + ');',
-      'data-800': '@transform[cubic]: translate(-'+(logoXCenteredOffset-logoXOffset)+' -'+(logoYCenteredOffset-logoYOffset)+') scale(1) rotate(-180 ' + (viewport.width() / 2) + ' ' + (viewport.height() / 2) + ');'
+      'data-400':   '@transform[cubic]: translate('+(viewport.width() / 2)+' ' + (viewport.height() / 2) + ') scale(0) rotate(0 ' + (viewport.width() / 2) + ' ' + (viewport.height() / 2) + ');',
+      'data-900': '@transform[cubic]: translate(-'+(logoXCenteredOffset-logoXOffset)+' -'+(logoYCenteredOffset-logoYOffset)+') scale(1) rotate(-180 ' + (viewport.width() / 2) + ' ' + (viewport.height() / 2) + ');'
       });
   },
 
@@ -132,7 +132,7 @@ module.exports = {
           opacity: randomOpacity,
           cx: randomXcoordinate,
           cy: randomYcoordinate,
-          'data-300':   '@cx: ' + randomXcoordinate + ';' +
+          'data-400':   '@cx: ' + randomXcoordinate + ';' +
                       '@cy: ' + randomYcoordinate + ';' +
                       'opacity: ' + randomOpacity,
           'data-900': '@cx: ' + originalXcoordinate + ';' +
@@ -156,9 +156,9 @@ module.exports = {
 
   updateGroup: function() {
     group.attr({
-      'data-800': 'opacity: 1;@transform[cubic]: translate(0 0);',
-      'data-1000': '@transform[cubic]: translate(' + (logoXCenteredOffset - logoXOffset) + ' ' + (logoYCenteredOffset - logoYOffset) + ');',
-      'data-1100': 'opacity: 0'
+      'data-600': 'opacity: 1;@transform[cubic]: translate(0 0);',
+      'data-1100': '@transform[cubic]: translate(' + (logoXCenteredOffset - logoXOffset) + ' ' + (logoYCenteredOffset - logoYOffset) + ');',
+      'data-1300': 'opacity: 0'
     });
   },
 
@@ -169,8 +169,8 @@ module.exports = {
     backgroundGradient.attr({
       opacity: 0,
       fill: gradient,
-      'data-1100': 'opacity: 0',
-      'data-1200': 'opacity: .6'
+      'data-1300': 'opacity: 0',
+      'data-1400': 'opacity: .6'
     });
   },
 
