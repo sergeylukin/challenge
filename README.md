@@ -40,3 +40,12 @@ browser.
 - `Gulp` for being an awesome automated tasks manager
 
 - `Browsersync` for being a great cross-devices live reload solution
+
+- [Skrollr](https://github.com/Prinzhorn/skrollr) - great parallax scrolling
+  library
+
+- [Snap.svg](http://snapsvg.io/) - my tool of choice when it comes down to
+  manipulating SVG
+
+- [Picturefill](https://github.com/scottjehl/picturefill) - responsive images
+  support polyfill
