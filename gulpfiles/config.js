@@ -61,6 +61,14 @@ module.exports = {
     }
   },
 
+  inlinesource: {
+    production: {
+      compress: true,
+      src: production + '/**/*.html',
+      dest: production
+    }
+  },
+
   autoprefixer: {
     browsers: [
       'last 2 versions',
