@@ -3,7 +3,6 @@
 require('modernizr');
 require('skrollr');
 require('pace');
-require('snap');
 require('picturefill');
 
 var scrolling = require('./modules/scrolling');

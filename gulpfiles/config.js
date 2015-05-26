@@ -84,8 +84,8 @@ module.exports = {
       entries:    './' + srcAssets + '/javascripts/application.js',
       dest:       developmentAssets + '/js',
       outputName: 'application.js',
-      // We require Modernizr in head.js so exclude it from here
-      ignore: 'modernizr'
+      // We require Modernizr and Pace in head.js so exclude it from here
+      ignore: ['modernizr', 'pace']
     }]
   },
 

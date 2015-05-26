@@ -1,3 +1,6 @@
+/* global Snap */
+
+require('snap');
 var viewport = require('./viewport');
 var letters = require('./letters');
 var rand = require('./rand');

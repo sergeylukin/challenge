@@ -1,1 +1,2 @@
 require('modernizr');
+require('pace');
