@@ -32,9 +32,9 @@ if (Modernizr.svg && viewport.width() > 480 && !device.isMobileOrTablet()) {
   logo.removeAttribute('data-1000');
   logo.removeAttribute('data-1100');
 
-  var city = document.getElementById('City');
-  city.removeAttribute('data-900');
-  city.removeAttribute('data-901');
+  var cityEl = document.getElementById('City');
+  cityEl.removeAttribute('data-900');
+  cityEl.removeAttribute('data-901');
 
 }
 
