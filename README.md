@@ -1,14 +1,15 @@
 # You Gotta Love Front End - Welcome to Tel Aviv
 
-![screenshot](/screenshot.jpg)
+[![screenshot](/screenshot.jpg)](http://sergeylukin.github.io/yougottalovefrontend)
 
 Gulp powered project crafted with love on Macbook Pro in Israel in 2015 specially for
 [YGLF challenge](https://github.com/YouGottaLoveFrontEnd/challenge).
 Aimed to take 2nd place. Or 1st in the worst case scenario. Just kidding, of
 course 1st place is the aim.
 
-[LIVE DEMO](http://sergeylukin.com/yougottalovefrontend)
+## Live demo
 
+http://sergeylukin.com/yougottalovefrontend
 
 ## Commands
 
@@ -41,9 +42,9 @@ browser.
 
 - [codepen.io](http://codepen.io) for being an amazing brainstorming platform
 
-- `Gulp` for being an awesome automated tasks manager
+- [Gulp](http://gulpjs.com/) for being an awesome automated tasks manager
 
-- `Browsersync` for being a great cross-devices live reload solution
+- [Browsersync](http://www.browsersync.io/) for being a great cross-devices live reload solution
 
 - [Skrollr](https://github.com/Prinzhorn/skrollr) - great parallax scrolling
   library
