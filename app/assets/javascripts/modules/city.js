@@ -2,7 +2,7 @@ var viewport = require('./viewport');
 
 module.exports = {
 
-  update: function() {
+  adjustToScreen: function() {
     var cityEl = document.getElementById('Telaviv'),
         cityHeight = cityEl.clientHeight,
         viewportHeight = viewport.height();

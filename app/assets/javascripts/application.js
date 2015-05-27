@@ -29,8 +29,12 @@ if (Modernizr.svg && viewport.width() > 480 && !device.isMobileOrTablet()) {
 
   var logo = document.getElementById('Logo');
   logo.dataset['400'] = "opacity: 1; display: inline;";
+  logo.removeAttribute('data-1000');
   logo.removeAttribute('data-1100');
-  logo.removeAttribute('data-1200');
+
+  var city = document.getElementById('City');
+  city.removeAttribute('data-900');
+  city.removeAttribute('data-901');
 
 }
 
@@ -42,7 +46,7 @@ Pace.on('done', function(){
   document.getElementById('ScrollingHelpfulMessage').classList.remove('is-hidden');
 
   // Remember to perform this after YGLF-intro container is unhidden
-  city.update();
+  city.adjustToScreen();
 
 });
 
@@ -58,10 +62,10 @@ var resizeHandler = debounce(function() {
   svgstars.updateBackgroundGradient();
 
   SKROLL.refresh();
-  if (SKROLL.getScrollTop() > 299) {
-    SKROLL.setScrollTop(299);
+  if (SKROLL.getScrollTop() > 129) {
+    SKROLL.setScrollTop(129);
   }
-  city.update();
+  city.adjustToScreen();
 }, 250);
 
 window.addEventListener('resize', resizeHandler);

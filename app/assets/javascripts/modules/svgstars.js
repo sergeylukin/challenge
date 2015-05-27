@@ -93,7 +93,7 @@ module.exports = {
     frameStroke.attr({
       width: logoWidth,
       height: logoHeight,
-      'data-400':   '@transform[cubic]: translate('+(viewport.width() / 2)+' ' + (viewport.height() / 2) + ') scale(0) rotate(0 ' + (viewport.width() / 2) + ' ' + (viewport.height() / 2) + ');',
+      'data-200':   '@transform[cubic]: translate('+(viewport.width() / 2)+' ' + (viewport.height() / 2) + ') scale(0) rotate(0 ' + (viewport.width() / 2) + ' ' + (viewport.height() / 2) + ');',
       'data-900': '@transform[cubic]: translate(-'+(logoXCenteredOffset-logoXOffset)+' -'+(logoYCenteredOffset-logoYOffset)+') scale(1) rotate(-180 ' + (viewport.width() / 2) + ' ' + (viewport.height() / 2) + ');'
       });
   },
@@ -132,19 +132,19 @@ module.exports = {
           opacity: randomOpacity,
           cx: randomXcoordinate,
           cy: randomYcoordinate,
-          'data-400':   '@cx: ' + randomXcoordinate + ';' +
+          'data-200':   '@cx: ' + randomXcoordinate + ';' +
                       '@cy: ' + randomYcoordinate + ';' +
                       'opacity: ' + randomOpacity,
           'data-900': '@cx: ' + originalXcoordinate + ';' +
                       '@cy: ' + originalYcoordinate + ';' +
                       'opacity: 1'
         });
-        
+
         Points.push(point);
         group.add(point);
-        
+
       }
-      
+
     });
   },
 
@@ -157,7 +157,7 @@ module.exports = {
   updateGroup: function() {
     group.attr({
       'data-600': 'opacity: 1;@transform[cubic]: translate(0 0);',
-      'data-1100': '@transform[cubic]: translate(' + (logoXCenteredOffset - logoXOffset) + ' ' + (logoYCenteredOffset - logoYOffset) + ');',
+      'data-1000': '@transform[cubic]: translate(' + (logoXCenteredOffset - logoXOffset) + ' ' + (logoYCenteredOffset - logoYOffset) + ');',
       'data-1300': 'opacity: 0'
     });
   },
@@ -169,8 +169,8 @@ module.exports = {
     backgroundGradient.attr({
       opacity: 0,
       fill: gradient,
-      'data-1100': 'opacity: 0',
-      'data-1300': 'opacity: .6'
+      'data-1000': 'opacity: 0',
+      'data-1200': 'opacity: .4'
     });
   },
 
