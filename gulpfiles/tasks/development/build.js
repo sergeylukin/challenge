@@ -10,7 +10,9 @@ gulp.task('build', function(callback) {
     'html',
     'sass',
     'scripts',
-    'images'
+    'images',
+    'fonts',
+    'audio'
   ],
   callback);
 });

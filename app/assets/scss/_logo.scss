@@ -1,15 +1,60 @@
-.js #Logo {
+.js .Logo {
   display: none;
 }
 
-#Logo {
+.Logo {
+  position: fixed;
+  z-index: 2;
+}
+
+.Logo-image {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   margin: auto;
-  max-width: 70%;
-  max-height: 60%;
+  width: 70%;
+  max-width: 383px;
+  max-height: 283px;
   z-index: 2;
+}
+
+.Logo-player {
+  position: absolute;
+}
+
+.Logo-playButton {
+  display: block;
+  position: relative;
+  padding: .5em;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  color: transparent;
+  background-color: white;
+  top: 0;
+  left: 0;
+
+  &:hover {
+    text-decoration: none;
+    color: transparent;
+    &::before {
+      color: #146BBF;
+    }
+  }
+
+  &:active {
+    &::before {
+      top: .28em;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: .25em;
+    left: .25em;
+    font-size: 2em;
+    color: #20CF9E;
+  }
 }

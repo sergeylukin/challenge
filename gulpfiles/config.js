@@ -123,6 +123,28 @@ module.exports = {
     dest: developmentAssets + '/images'
   },
 
+  copyfonts: {
+    development: {
+      src:  srcAssets + '/fonts/*',
+      dest: developmentAssets + '/fonts'
+    },
+    production: {
+      src:  srcAssets + '/fonts/*',
+      dest: productionAssets + '/fonts'
+    }
+  },
+
+  audio: {
+    development: {
+      src:  srcAssets + '/audio/*',
+      dest: developmentAssets + '/audio'
+    },
+    production: {
+      src:  srcAssets + '/audio/*',
+      dest: productionAssets + '/audio'
+    }
+  },
+
   watch: {
     sass:    srcAssets + '/scss/**/*.{sass,scss}',
     scripts: [

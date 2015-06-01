@@ -11,6 +11,7 @@ var svgstars = require('./modules/svgstars');
 var viewport = require('./modules/viewport');
 var device = require('./modules/device');
 var debounce = require('./modules/debounce');
+var soundtrack = require('./modules/soundtrack');
 
 // Disable scrolling as soon as possible
 // As soon as all elements will be loaded scrolling will be enabled
@@ -27,7 +28,7 @@ if (Modernizr.svg && viewport.width() > 480 && !device.isMobileOrTablet()) {
 
 } else {
 
-  var logo = document.getElementById('Logo');
+  var logo = document.querySelector('.js-logo');
   logo.dataset['400'] = "opacity: 1; display: inline;";
   logo.removeAttribute('data-1000');
   logo.removeAttribute('data-1100');
@@ -68,5 +69,6 @@ Pace.on('done', function(){
   // Remember to perform this after YGLF-intro container is unhidden
   city.adjustToScreen();
 
+  soundtrack.init();
 });
 

@@ -62,11 +62,11 @@ module.exports = {
     // in following corrections to start from
     // zero coordinates:
     textXCorrection = -68;
-    textYCorrection = -86;
+    textYCorrection = -82;
 
     // Width is 309px+padding and height is 208.3px+padding
     logoWidth = 383;
-    logoHeight = 283;
+    logoHeight = 275;
 
     // Specify the offset from left/top edges after first transition
     // In our case we want to offset 10% of the viewport size

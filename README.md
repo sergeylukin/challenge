@@ -40,6 +40,13 @@ browser.
   
   I've purchased standard license to use it in my project (purchase #40524481)
 
+- [QuartzMusicBeats](http://audiojungle.net/user/QuartzMusicBeats) for
+  [beautiful dubstep soundtrack](http://audiojungle.net/item/stars/10510810)
+
+  I've purchased
+  [license](https://raw.githubusercontent.com/sergeylukin/yougottalovefrontend/master/licenses/soundtrack-license.txt)
+  to use it in this project
+
 - [codepen.io](http://codepen.io) for being an amazing brainstorming platform
 
 - [Gulp](http://gulpjs.com/) for being an awesome automated tasks manager

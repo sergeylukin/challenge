@@ -5,17 +5,37 @@
   <title>Welcome to Tel Aviv</title>
   <meta name=viewport content="width=device-width" />
   <script src="assets/js/head.js" inline></script>
-  <link rel="stylesheet" href="assets/css/main.css" inline />
+  <link rel="stylesheet" href="assets/css/head.css" inline />
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
 
-  <img src="assets/images/logo.png"
-       id="Logo"
-       data-0="opacity: 0;" data-1000="opacity: 0; display: inline;" data-1100="opacity: 1;" />
+  <div class="Logo js-logo" data-0="opacity: 0;" data-1000="opacity: 0; display: inline;" data-1100="opacity: 1;">
+    <img src="assets/images/logo.png"
+         class="Logo-image"
+         id="LogoImg"
+          />
+
+    <canvas id="Visualizer" width="640" height="50"
+            style="position: fixed; z-index: 10;"></canvas>
+
+    <audio id="Soundtrack">
+      <source src="assets/audio/soundtrack.mp4" type="audio/mpeg" />
+    </audio>
+
+    <div class="Logo-player is-hidden js-player">
+      <a href="#" class="Logo-playButton icon icon-play"
+         id="PlayButton"
+         data-1200="transform:translate(0px, 0em);"
+         data-1350="transform:translate(0px, 3em);">Play!</a>
+    </div>
+  </div>
 
   <div id="YGLF-intro" class="is-hidden">
 
-    <div class="WelcomeMessage" data-0="opacity: 1" data-130="opacity: 0;">
+    <div class="WelcomeMessage" data-0="z-index: 2; opacity: 1"
+                                data-130="opacity: 0;"
+                                data-131="z-index: 0;">
       <p class="WelcomeMessage-cell">Welcome to Tel Aviv</p>
     </div>
 
