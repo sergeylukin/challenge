@@ -2,6 +2,8 @@
 
 [![screenshot](/screenshot.jpg)](http://sergeylukin.github.io/yougottalovefrontend)
 
+[![screenshot of audio player](/screenshot2.jpg)](http://sergeylukin.github.io/yougottalovefrontend)
+
 Gulp powered project crafted with love on Macbook Pro in Israel in 2015 specially for
 [YGLF challenge](https://github.com/YouGottaLoveFrontEnd/challenge).
 Aimed to take 2nd place. Or 1st in the worst case scenario. Just kidding, of
