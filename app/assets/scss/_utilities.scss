@@ -6,6 +6,10 @@
   display: none;
 }
 
+.u-noLineBreak {
+  white-space: nowrap;
+}
+
 .is-levitating{
   animation: levitate 2s infinite linear;
 }
@@ -18,7 +22,7 @@
   }
   100% {
     transform: rotate(360deg)
-    translate(-3px) 
+    translate(-3px)
     rotate(-360deg);
   }
 
