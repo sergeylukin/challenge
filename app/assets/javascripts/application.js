@@ -1,4 +1,6 @@
-/* global Modernizr, Pace, skrollr */
+/* global Modernizr */
+/* global Pace */
+/* global skrollr */
 
 require('modernizr');
 require('skrollr');
@@ -37,6 +39,14 @@ if (Modernizr.svg && viewport.width() > 480 && !device.isMobileOrTablet()) {
   cityEl.removeAttribute('data-900');
   cityEl.removeAttribute('data-901');
 
+  var playButton = document.getElementById('PlayButton');
+  playButton.dataset['400'] = "opacity: 0;";
+  playButton.dataset['401'] = "opacity: 1; transform:translate(0px, 0em);";
+  playButton.dataset['450'] = "transform:translate(0px, 3em);";
+  playButton.removeAttribute('data-1200');
+  playButton.removeAttribute('data-1201');
+  playButton.removeAttribute('data-1350');
+
 }
 
 
@@ -69,6 +79,8 @@ Pace.on('done', function(){
   // Remember to perform this after YGLF-intro container is unhidden
   city.adjustToScreen();
 
-  soundtrack.init();
+  if (Modernizr.webaudio) {
+    soundtrack.init();
+  }
 });
 

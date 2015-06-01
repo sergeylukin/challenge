@@ -6,7 +6,6 @@ module.exports = {
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
     var audio = document.getElementById('Soundtrack');
-    // audio.play();
 
     var analyser = audioCtx.createAnalyser();
     analyser.minDecibels = -90;
@@ -84,7 +83,7 @@ module.exports = {
       var playerEl = document.querySelector('.js-player');
       playerEl.classList.remove('is-hidden');
       playerEl.style.left = logoLeftOffset + 'px';
-      playerEl.style.top = (viewport.height()/2 + logoHeight/2 - playerEl.clientHeight) + 'px';
+      playerEl.style.top = (viewport.height()/2 + logoHeight/2 - playerEl.clientHeight - 1) + 'px';
     };
 
     updatePosition();
