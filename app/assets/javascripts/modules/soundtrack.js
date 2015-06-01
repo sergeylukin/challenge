@@ -1,72 +1,75 @@
+/* global Modernizr */
+
 var viewport = require('./viewport');
 
 module.exports = {
   init: function() {
     var drawVisual;
-    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
     var audio = document.getElementById('Soundtrack');
 
-    var analyser = audioCtx.createAnalyser();
-    analyser.minDecibels = -90;
-    analyser.maxDecibels = -10;
-    analyser.smoothingTimeConstant = 0.85;
+    if (Modernizr.webaudio) {
+      var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      var analyser = audioCtx.createAnalyser();
+      analyser.minDecibels = -90;
+      analyser.maxDecibels = -10;
+      analyser.smoothingTimeConstant = 0.85;
 
-    // Our <audio> element will be the audio source.
-    var source = audioCtx.createMediaElementSource(audio);
-    source.connect(analyser);
-    analyser.connect(audioCtx.destination);
+      // Our <audio> element will be the audio source.
+      var source = audioCtx.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(audioCtx.destination);
 
-    var canvas = document.getElementById('Visualizer'),
-        canvasCtx = canvas.getContext('2d');
+      var canvas = document.getElementById('Visualizer'),
+          canvasCtx = canvas.getContext('2d');
 
-    var WIDTH = canvas.width;
-    var HEIGHT = canvas.height;
+      var WIDTH = canvas.width;
+      var HEIGHT = canvas.height;
 
-    var visualize = function(time) {
+      var visualize = function(time) {
 
-      analyser.fftSize = 512;
-      var bufferLength = analyser.frequencyBinCount;
-      var dataArray = new Uint8Array(bufferLength);
+        analyser.fftSize = 512;
+        var bufferLength = analyser.frequencyBinCount;
+        var dataArray = new Uint8Array(bufferLength);
 
 
-      var draw = function() {
-        drawVisual = requestAnimationFrame(draw);
+        var draw = function() {
+          drawVisual = requestAnimationFrame(draw);
 
-        analyser.getByteFrequencyData(dataArray);
+          analyser.getByteFrequencyData(dataArray);
 
-        canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
-        canvasCtx.lineCap = 'round';
+          canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
+          canvasCtx.lineCap = 'round';
 
-        var barHeight;
-        var spacerWidth = 2;
-        var numBars = 80;
-        var barWidth = (WIDTH - spacerWidth * (numBars - 1)) / numBars;
-        var x = 0;
+          var barHeight;
+          var spacerWidth = 2;
+          var numBars = 80;
+          var barWidth = (WIDTH - spacerWidth * (numBars - 1)) / numBars;
+          var x = 0;
 
-        // Draw rectangle for each frequency bin.
-        for (var i = 0; i < bufferLength; ++i) {
-          if (i+1  === numBars) {
-            barWidth -= .35;
+          // Draw rectangle for each frequency bin.
+          for (var i = 0; i < bufferLength; ++i) {
+            if (i+1  === numBars) {
+              barWidth -= .35;
+            }
+            barHeight = dataArray[i];
+            canvasCtx.fillStyle = '#fff';
+            canvasCtx.fillRect(x, HEIGHT, barWidth, -barHeight/5);
+
+            x += barWidth + spacerWidth;
           }
-          barHeight = dataArray[i];
-          canvasCtx.fillStyle = '#fff';
-          canvasCtx.fillRect(x, HEIGHT, barWidth, -barHeight/5);
 
-          x += barWidth + spacerWidth;
-        }
+        };
+
+        draw();
 
       };
 
-      draw();
-
-    };
-
-    var unvisualize = function() {
-      if (audio.paused) {
-        cancelAnimationFrame(drawVisual);
-      }
-    };
+      var unvisualize = function() {
+        if (audio.paused && drawVisual) {
+          cancelAnimationFrame(drawVisual);
+        }
+      };
+    }
 
     var updatePosition = function() {
       var logoEl = document.getElementById('LogoImg'),
@@ -74,11 +77,13 @@ module.exports = {
           logoHeight = logoEl.clientHeight,
           logoLeftOffset = logoEl.getBoundingClientRect().left;
 
-      canvas.setAttribute('width', logoWidth);
-      canvas.style.left = logoLeftOffset + 'px';
-      canvas.style.top = (viewport.height()/2 - logoHeight/2 - canvas.height) + 'px';
-      canvas.style.width = logoWidth + 'px';
-      WIDTH = logoWidth;
+      if (Modernizr.webaudio) {
+        canvas.setAttribute('width', logoWidth);
+        canvas.style.left = logoLeftOffset + 'px';
+        canvas.style.top = (viewport.height()/2 - logoHeight/2 - canvas.height) + 'px';
+        canvas.style.width = logoWidth + 'px';
+        WIDTH = logoWidth;
+      }
 
       var playerEl = document.querySelector('.js-player');
       playerEl.classList.remove('is-hidden');
@@ -100,23 +105,29 @@ module.exports = {
       e.preventDefault();
       if (audio.paused) {
         audio.play();
-        visualize();
+        if (Modernizr.webaudio) {
+          visualize();
+        }
         playButton.classList.remove('icon-play');
         playButton.classList.add('icon-pause');
       } else {
         audio.pause();
-        setTimeout(function() {
-          unvisualize();
-        }, 10000);
+        if (Modernizr.webaudio) {
+          setTimeout(function() {
+            unvisualize();
+          }, 10000);
+        }
         playButton.classList.remove('icon-pause');
         playButton.classList.add('icon-play');
       }
     });
 
     audio.addEventListener('ended', function(e) {
-      setTimeout(function() {
-        unvisualize();
-      }, 10000);
+      if (Modernizr.webaudio) {
+        setTimeout(function() {
+          unvisualize();
+        }, 10000);
+      }
       if (playButton.classList.contains('icon-pause')) {
         playButton.classList.remove('icon-pause');
         playButton.classList.add('icon-play');

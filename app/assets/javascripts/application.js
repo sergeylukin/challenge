@@ -79,8 +79,6 @@ Pace.on('done', function(){
   // Remember to perform this after YGLF-intro container is unhidden
   city.adjustToScreen();
 
-  if (Modernizr.webaudio) {
-    soundtrack.init();
-  }
+  soundtrack.init();
 });
 
