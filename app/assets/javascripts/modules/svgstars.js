@@ -24,6 +24,10 @@ var paper,
 
 module.exports = {
 
+  initialized: function() {
+    return (paper && frameStroke && group && backgroundGradient);
+  },
+
   initPaper: function() {
     paper = Snap(viewport.width(), viewport.height());
     paper.appendTo(document.getElementById('YGLF-intro'));
@@ -33,6 +37,8 @@ module.exports = {
 
     group = paper.g();
     this.updateGroup();
+
+    initialized = true;
   },
 
   updatePaper: function() {

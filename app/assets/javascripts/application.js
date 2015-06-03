@@ -55,12 +55,14 @@ Pace.on('done', function(){
   var SKROLL = skrollr.init();
 
   var resizeHandler = debounce(function() {
-    svgstars.updatePaper();
-    svgstars.updateFrame();
-    svgstars.positionFrameInCenter();
-    svgstars.removeStars();
-    svgstars.addStars();
-    svgstars.updateBackgroundGradient();
+    if (svgstars.initialized()) {
+      svgstars.updatePaper();
+      svgstars.updateFrame();
+      svgstars.positionFrameInCenter();
+      svgstars.removeStars();
+      svgstars.addStars();
+      svgstars.updateBackgroundGradient();
+    }
 
     SKROLL.refresh();
     if (SKROLL.getScrollTop() > 129 && SKROLL.getScrollTop() < 1010) {
